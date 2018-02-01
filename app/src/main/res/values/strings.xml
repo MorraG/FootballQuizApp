@@ -1,0 +1,76 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">FootballQuizApp</string>
+    <string name="EnterNameField">Enter Your Name</string>
+    <string name="no_name">Please, Enter Your Name</string>
+    <string name="well_done">Well done!</string>
+    <string name="results">Here are your results: </string>
+    <string name="correctAnswer">Correct answer</string>
+    <string name="wrongAnswer">Wrong answer</string>
+    <string name="total_correct"><xliff:g example="5" id="totalCorrect">%d</xliff:g> correct answers out of <xliff:g example="10" id="number_of_questions">%d</xliff:g>!</string>
+    <string name="total_incorrect"><xliff:g example="5" id="totalIncorrect">%d</xliff:g> wrong answers out of <xliff:g example="10" id="number_of_questions">%d</xliff:g>!</string>
+    <string name="questionNumber">Question <xliff:g example="5" id="currentQuestion">%d</xliff:g> out of <xliff:g example="10" id="number_of_questions">%d</xliff:g></string>
+    <string name="nameSummary">Congratulations, <xliff:g example="Amy" id="name">%s</xliff:g>!</string>
+    <string name="not_chosen">Please, choose the answer to proceed</string>
+    <string name="not_chosen1">Please, answer at least one question to proceed</string>
+    <string name="not_chosen2">Please, enter the answer to proceed</string>
+    <string name="ButtonStart">Start Now</string>
+    <string name="submit_button">SUBMIT</string>
+    <string name="content_logoApp">logo-App</string>
+    <string name="content_imageHome">messi</string>
+    <string name="share">SHARE</string>
+    <string name="home">HOME</string>
+    <string name="not_answered">Not answered</string>
+
+    <!-- Quiz Answer List-->
+    <string name="q1_ans_1">Estádio do Dragão</string>
+    <string name="q1_ans_2">Alberto Jacinto Armando</string>
+    <string name="q1_ans_3">Santiago Bernabéu</string>
+    <string name="q1_ans_4">Antonio Vespucio Liberti</string>
+    <string name="q2_ans_1">€800 million</string>
+    <string name="q2_ans_2">€300 million</string>
+    <string name="q2_ans_3">€520 million</string>
+    <string name="q2_ans_4">€222 million</string>
+    <string name="q3_ans_1">6</string>
+    <string name="q3_ans_2">5</string>
+    <string name="q3_ans_3">4</string>
+    <string name="q3_ans_4">3</string>
+    <string name="q4_ans_1">Gunnar Nordahl (35goal)</string>
+    <string name="q4_ans_2">Luca Toni (41 goal)</string>
+    <string name="q4_ans_3">Gonzalo Higuaín (36 goal)</string>
+    <string name="q4_ans_4">Antonio Valentín Angelillo (30 goal)</string>
+    <string name="q5_ans_1">El Jardinero</string>
+    <string name="q5_ans_2">Paso Doble</string>
+    <string name="q5_ans_3">O’Rei</string>
+    <string name="q5_ans_4">Saeta rubia</string>
+    <string name="q6_ans_1">Buffon, 975\' minutes</string>
+    <string name="q6_ans_2">Jašin 2030\' minutes</string>
+    <string name="q6_ans_3">Geraldo Filho Mazarópi, 1816\' minutes</string>
+    <string name="q6_ans_4">Edwin van der Sar, 1311\' minutes</string>
+    <string name="q7_ans_1">Barcellona (8)</string>
+    <string name="q7_ans_2">Juventus (7)</string>
+    <string name="q7_ans_3">Milan (7)</string>
+    <string name="q7_ans_4">Bayern München (5)</string>
+    <string name="q8_ans_1">Franco Baresi (3)</string>
+    <string name="q8_ans_2">Iker Casillas (4)</string>
+    <string name="q8_ans_3">Diego Armando Maradona (2)</string>
+    <string name="q8_ans_4">Marcos Cafu (3)</string>
+    <string name="q9_ans_1">Messi</string>
+    <string name="q9_ans_2">Pelè</string>
+    <string name="q9_ans_3">Gerd Müller</string>
+    <string name="q9_ans_4">Ronaldo</string>
+    <string name="q10_ans_1">2010</string>
+    <string name="q10_ans_2">2003</string>
+    <string name="q10_ans_3">2007</string>
+    <string name="q10_ans_4">1998</string>
+    <!-- Quiz Questions List-->
+    <string name="q_fut_1">What is the real name of the stadium: \n\"La Bombonera\"?</string>
+    <string name="q_fut_2">In August 2017, Paris St-Germain smashed the world transfer record in buying Neymar. What was the total amount of the transfer?</string>
+    <string name="q_fut_3">How many Ballon d\'Or won Lionel Messi?</string>
+    <string name="q_fut_4">Who set the record of goals scored in a season of Serie A (ITA)?</string>
+    <string name="q_fut_5">What was the nickname of Alfredo Di Stefano?</string>
+    <string name="q_fut_6">Who holds the absolute record (of all times) of unbeatenness for a goalkeeper?</string>
+    <string name="q_fut_7">Which team has lost the most finals of the UEFA Champions League competition?</string>
+    <string name="q_fut_8">Which player has the record of World finals played?</string>
+    <string name="q_fut_9">Which player scored the most goals during a calendar year?</string>
+    <string name="q_fut_10">From which year players competing to receive the Golden Ball can come not only from Europe, but from all over the world?</string>
+</resources>
