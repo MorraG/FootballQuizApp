@@ -69,8 +69,8 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         rg10.setOnCheckedChangeListener(this);
         // initialize correct answers
         answer1_2 = (RadioButton) findViewById(R.id.answer1_2);
-        answer2_1 = (CheckBox)findViewById(R.id.answer2_1)
-        answer2_2 = (CheckBox) findViewById(R.id.answer2_2)
+        answer2_1 = (CheckBox)findViewById(R.id.answer2_1);
+        answer2_2 = (CheckBox) findViewById(R.id.answer2_2);
         answer2_4 = (CheckBox) findViewById(R.id.answer2_4);
         answer3_2 = (RadioButton) findViewById(R.id.answer3_2);
         answer4_3 = (RadioButton) findViewById(R.id.answer4_3);
