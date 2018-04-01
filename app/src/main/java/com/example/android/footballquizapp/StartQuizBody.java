@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -25,8 +26,12 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
 
     RadioButton answer1_2, answer3_2, answer4_3, answer5_4,
             answer6_3, answer7_2, answer8_4, answer9_1, answer10_3;
+
+    //variable to store answer to the question 7
+    final String Q7_ANSWER = "juventus";
+
     // Here we declare RadioGroups
-    RadioGroup rg1, rg2, rg3, rg4, rg5, rg6, rg7, rg8, rg9, rg10;
+    RadioGroup rg1, rg3, rg4, rg5, rg6, rg8, rg9, rg10;
     // Here we declare Buttons
     Button buttonToMain, submitButton, shareButton;
     // Here we declare a variable to store player's name
@@ -51,7 +56,6 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         rg4 = findViewById(R.id.radio_group4);
         rg5 = findViewById(R.id.radio_group5);
         rg6 = findViewById(R.id.radio_group6);
-        rg7 = findViewById(R.id.radio_group7);
         rg8 = findViewById(R.id.radio_group8);
         rg9 = findViewById(R.id.radio_group9);
         rg10 = findViewById(R.id.radio_group10);
@@ -61,7 +65,6 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         rg4.setOnCheckedChangeListener(this);
         rg5.setOnCheckedChangeListener(this);
         rg6.setOnCheckedChangeListener(this);
-        rg7.setOnCheckedChangeListener(this);
         rg8.setOnCheckedChangeListener(this);
         rg9.setOnCheckedChangeListener(this);
         rg10.setOnCheckedChangeListener(this);
@@ -71,7 +74,6 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         answer4_3 = (RadioButton) findViewById(R.id.answer4_3);
         answer5_4 = (RadioButton) findViewById(R.id.answer5_4);
         answer6_3 = (RadioButton) findViewById(R.id.answer6_3);
-        answer7_2 = (RadioButton) findViewById(R.id.answer7_2);
         answer8_4 = (RadioButton) findViewById(R.id.answer8_4);
         answer9_1 = (RadioButton) findViewById(R.id.answer9_1);
         answer10_3 = (RadioButton) findViewById(R.id.answer10_3);
@@ -160,19 +162,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
                 (rg6.getChildAt(i)).setEnabled(false);
             }
         }
-        // Checking RadioGroup 7
-        if (radioGroup == rg7) {
-            RadioButton checked_answer7 = (RadioButton) findViewById(rg7.getCheckedRadioButtonId());
-            if (answer7_2.isChecked()) {
-                correct_score++;
-            } else {
-                incorrect_score++;
-            }
-            // Disable RadioButtons of rg1
-            for (int i = 0; i < rg7.getChildCount(); i++) {
-                (rg7.getChildAt(i)).setEnabled(false);
-            }
-        }
+
         // Checking RadioGroup 8
         if (radioGroup == rg8) {
             RadioButton checked_answer8 = (RadioButton) findViewById(rg8.getCheckedRadioButtonId());
@@ -221,9 +211,10 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
      */
     public void submit() {
         if ((rg1.getCheckedRadioButtonId() == -1) && (rg3.getCheckedRadioButtonId() == -1) &&
-                (rg4.getCheckedRadioButtonId() == -1) && (rg5.getCheckedRadioButtonId() == -1) && (rg6.getCheckedRadioButtonId() == -1) &&
-                (rg7.getCheckedRadioButtonId() == -1) && (rg8.getCheckedRadioButtonId() == -1) && (rg9.getCheckedRadioButtonId() == -1) &&
-                (rg10.getCheckedRadioButtonId() == -1) && (noCheckBoxMarked(answer2_1, answer2_2, answer2_3, answer2_4))) {
+                (rg4.getCheckedRadioButtonId() == -1) && (rg5.getCheckedRadioButtonId() == -1) &&
+                (rg6.getCheckedRadioButtonId() == -1) && (rg8.getCheckedRadioButtonId() == -1) &&
+                (rg9.getCheckedRadioButtonId() == -1) && (rg10.getCheckedRadioButtonId() == -1) &&
+                (noCheckBoxMarked(answer2_1, answer2_2, answer2_3, answer2_4))) {
             Toast.makeText(this, R.string.not_chosen1, Toast.LENGTH_SHORT).show();
             return;
         } else {
@@ -232,6 +223,9 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             // Check if the questions with CheckBoxes was all marked correctly
             validateCorrectCheckBoxAnswers(answer2_1, answer2_2, answer2_4);
             disableCheckBoxOptions(answer2_1, answer2_2, answer2_3, answer2_4);
+            CheckQuiz7();
+
+
 
             String resultMessage = createQuizSummary(name, correct_score, incorrect_score, totalNumberOfQuestions);
             Toast.makeText(getApplicationContext(), resultMessage, Toast.LENGTH_LONG).show();
@@ -266,6 +260,18 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             }
         }
         return numberOfCheckBoxesNotChecked == checkBoxes.length;
+    }
+    private void CheckQuiz7() {
+        if( checkQuestion7() ){
+            correct_score++;
+        } else {
+            incorrect_score++;
+        }
+    }
+    private boolean checkQuestion7() {
+        EditText et = (EditText)findViewById(R.id.q_fut_7edit_text);
+
+        return et.getText().toString().equalsIgnoreCase(Q7_ANSWER);
     }
 
     // This method creates Quiz summary.
