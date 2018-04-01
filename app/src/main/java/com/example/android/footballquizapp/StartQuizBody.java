@@ -1,17 +1,13 @@
 package com.example.android.footballquizapp;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
@@ -24,9 +20,11 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
     // Incorrect answers counter
     int incorrect_score = 0;
     // Here we declare variables for correct answer variants
+
+    CheckBox answer2_1, answer2_2, answer2_3, answer2_4;
+
     RadioButton answer1_2, answer3_2, answer4_3, answer5_4,
             answer6_3, answer7_2, answer8_4, answer9_1, answer10_3;
-    CheckBox answer2_4, answer2_1, answer2_2;
     // Here we declare RadioGroups
     RadioGroup rg1, rg2, rg3, rg4, rg5, rg6, rg7, rg8, rg9, rg10;
     // Here we declare Buttons
@@ -69,9 +67,6 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         rg10.setOnCheckedChangeListener(this);
         // initialize correct answers
         answer1_2 = (RadioButton) findViewById(R.id.answer1_2);
-        answer2_4 = (CheckBox) findViewById(R.id.answer2_4);
-        answer2_2 = (CheckBox) findViewById(R.id.answer2_2);
-        answer2_1 = (CheckBox) findViewById(R.id.answer2_1);
         answer3_2 = (RadioButton) findViewById(R.id.answer3_2);
         answer4_3 = (RadioButton) findViewById(R.id.answer4_3);
         answer5_4 = (RadioButton) findViewById(R.id.answer5_4);
@@ -80,10 +75,13 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         answer8_4 = (RadioButton) findViewById(R.id.answer8_4);
         answer9_1 = (RadioButton) findViewById(R.id.answer9_1);
         answer10_3 = (RadioButton) findViewById(R.id.answer10_3);
-        // setting listener to CheckBox
-        answer2_4.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
-        answer2_2.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
-        answer2_1.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+
+        // initialize checkboxes
+        answer2_1 = (CheckBox) findViewById(R.id.answer2_1);
+        answer2_2 = (CheckBox) findViewById(R.id.answer2_2);
+        answer2_3 = (CheckBox) findViewById(R.id.answer2_3);
+        answer2_4 = (CheckBox) findViewById(R.id.answer2_4);
+
         // initialization Buttons
         buttonToMain = (Button) findViewById(R.id.backtomain_button);
         submitButton = (Button) findViewById(R.id.submit_button);
@@ -110,7 +108,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
                 (rg1.getChildAt(i)).setEnabled(false);
             }
         }
-       // Checking RadioGroup 3
+        // Checking RadioGroup 3
         if (radioGroup == rg3) {
             RadioButton checked_answer3 = (RadioButton) findViewById(rg3.getCheckedRadioButtonId());
             if (answer3_2.isChecked()) {
@@ -222,18 +220,52 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
      * a toast with the results of the game.
      */
     public void submit() {
-        if ((rg1.getCheckedRadioButtonId() == -1) && (rg2.getCheckedRadioButtonId() == -1) && (rg3.getCheckedRadioButtonId() == -1) &&
+        if ((rg1.getCheckedRadioButtonId() == -1) && (rg3.getCheckedRadioButtonId() == -1) &&
                 (rg4.getCheckedRadioButtonId() == -1) && (rg5.getCheckedRadioButtonId() == -1) && (rg6.getCheckedRadioButtonId() == -1) &&
                 (rg7.getCheckedRadioButtonId() == -1) && (rg8.getCheckedRadioButtonId() == -1) && (rg9.getCheckedRadioButtonId() == -1) &&
-                (rg10.getCheckedRadioButtonId() == -1)) {
+                (rg10.getCheckedRadioButtonId() == -1) && (noCheckBoxMarked(answer2_1, answer2_2, answer2_3, answer2_4))) {
             Toast.makeText(this, R.string.not_chosen1, Toast.LENGTH_SHORT).show();
             return;
         } else {
-            Intent openEmojiQuiz = getIntent();
-            name = openEmojiQuiz.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+
+            // Check if the questions with CheckBoxes was all marked correctly
+            validateCorrectCheckBoxAnswers(answer2_1, answer2_2, answer2_4);
+            disableCheckBoxOptions(answer2_1, answer2_2, answer2_3, answer2_4);
+
             String resultMessage = createQuizSummary(name, correct_score, incorrect_score, totalNumberOfQuestions);
             Toast.makeText(getApplicationContext(), resultMessage, Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void validateCorrectCheckBoxAnswers(CheckBox... correctCheckBoxes) {
+        boolean isAllCorrectAnswersMarked = true;
+        for (CheckBox checkBox : correctCheckBoxes) {
+            if (!checkBox.isChecked()) {
+                isAllCorrectAnswersMarked = false;
+            }
+        }
+        if (isAllCorrectAnswersMarked) {
+            correct_score++;
+        } else {
+            incorrect_score++;
+        }
+    }
+
+    private void disableCheckBoxOptions(CheckBox... checkBoxes) {
+        for (CheckBox checkBox : checkBoxes) {
+            checkBox.setEnabled(false);
+        }
+    }
+
+    private boolean noCheckBoxMarked(CheckBox... checkBoxes) {
+        int numberOfCheckBoxesNotChecked = 0;
+        for (CheckBox checkBox : checkBoxes) {
+            if (!checkBox.isChecked()) {
+                numberOfCheckBoxesNotChecked++;
+            }
+        }
+        return numberOfCheckBoxesNotChecked == checkBoxes.length;
     }
 
     // This method creates Quiz summary.
@@ -276,6 +308,8 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             case R.id.share_button:
                 share();
                 break;
+            default:
+                //do nothing
         }
     }
 
@@ -285,3 +319,4 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         startActivity(new Intent(this, MainActivity.class));
         this.finish();
     }
+}

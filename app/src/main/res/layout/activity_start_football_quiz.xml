@@ -93,6 +93,7 @@
             android:id="@+id/answer2_3"
             style="@style/radioButton"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/q2_ans_3" />
 
         <CheckBox
