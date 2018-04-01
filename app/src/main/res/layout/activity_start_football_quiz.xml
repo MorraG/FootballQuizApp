@@ -82,27 +82,27 @@
             android:orientation="vertical"
             android:paddingTop="@dimen/paddingOrMar_M">
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/answer2_1"
                 style="@style/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/q2_ans_1" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/answer2_2"
                 style="@style/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/q2_ans_2" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/answer2_3"
                 style="@style/radioButton"
                 android:layout_width="match_parent"
                 android:text="@string/q2_ans_3" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/answer2_4"
                 style="@style/radioButton"
                 android:layout_width="match_parent"

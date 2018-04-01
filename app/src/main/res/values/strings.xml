@@ -26,10 +26,10 @@
     <string name="q1_ans_2">Alberto Jacinto Armando</string>
     <string name="q1_ans_3">Santiago Bernabéu</string>
     <string name="q1_ans_4">Antonio Vespucio Liberti</string>
-    <string name="q2_ans_1">€800 million</string>
-    <string name="q2_ans_2">€300 million</string>
-    <string name="q2_ans_3">€520 million</string>
-    <string name="q2_ans_4">€222 million</string>
+    <string name="q2_ans_1">The Scissor Kick</string>
+    <string name="q2_ans_2">The Step-over</string>
+    <string name="q2_ans_3">The Smash</string>
+    <string name="q2_ans_4">The Elastico</string>
     <string name="q3_ans_1">6</string>
     <string name="q3_ans_2">5</string>
     <string name="q3_ans_3">4</string>
@@ -64,7 +64,7 @@
     <string name="q10_ans_4">1998</string>
     <!-- Quiz Questions List-->
     <string name="q_fut_1">What is the real name of the stadium: \n\"La Bombonera\"?</string>
-    <string name="q_fut_2">In August 2017, Paris St-Germain smashed the world transfer record in buying Neymar. What was the total amount of the transfer?</string>
+    <string name="q_fut_2">Which among these are Football Skills Tricks?</string>
     <string name="q_fut_3">How many Ballon d\'Or won Lionel Messi?</string>
     <string name="q_fut_4">Who set the record of goals scored in a season of Serie A (ITA)?</string>
     <string name="q_fut_5">What was the nickname of Alfredo Di Stefano?</string>

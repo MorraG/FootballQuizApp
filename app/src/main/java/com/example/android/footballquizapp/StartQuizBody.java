@@ -23,8 +23,9 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
     // Incorrect answers counter
     int incorrect_score = 0;
     // Here we declare variables for correct answer variants
-    RadioButton answer1_2, answer2_4, answer3_2, answer4_3, answer5_4,
+    RadioButton answer1_2, answer3_2, answer4_3, answer5_4,
             answer6_3, answer7_2, answer8_4, answer9_1, answer10_3;
+    CheckBox answer2_1, answer2_2, answer2_4;
     // Here we declare RadioGroups
     RadioGroup rg1, rg2, rg3, rg4, rg5, rg6, rg7, rg8, rg9, rg10;
     // Here we declare Buttons
@@ -33,7 +34,6 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
     String name;
     // Here we declare a variable for the quiz results toast
     String resultMessage;
-    // Here we declare a variable to store a string "Question (current question number) out of (total number of questions)"
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,9 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         rg10.setOnCheckedChangeListener(this);
         // initialize correct answers
         answer1_2 = (RadioButton) findViewById(R.id.answer1_2);
-        answer2_4 = (RadioButton) findViewById(R.id.answer2_4);
+        answer2_1 = (CheckBox)findViewById(R.id.answer2_1)
+        answer2_2 = (CheckBox) findViewById(R.id.answer2_2)
+        answer2_4 = (CheckBox) findViewById(R.id.answer2_4);
         answer3_2 = (RadioButton) findViewById(R.id.answer3_2);
         answer4_3 = (RadioButton) findViewById(R.id.answer4_3);
         answer5_4 = (RadioButton) findViewById(R.id.answer5_4);
@@ -107,8 +109,8 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         }
         // Checking RadioGroup 2
         if (radioGroup == rg2) {
-            RadioButton checked_answer2 = (RadioButton) findViewById(rg2.getCheckedRadioButtonId());
-            if (answer2_4.isChecked()) {
+            CheckBox checked_answer2 = (CheckBox) findViewById(rg2.getCheckedRadioButtonId());
+            if (answer2_4.isChecked()& answer2_1.isChecked()& answer2_2.isChecked()){
                 correct_score++;
             } else {
                 incorrect_score++;
