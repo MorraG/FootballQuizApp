@@ -115,7 +115,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg2
             for (int i = 0; i < rg2.getChildCount(); i++) {
                 (rg2.getChildAt(i)).setEnabled(false);
             }
@@ -128,7 +128,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg3
             for (int i = 0; i < rg3.getChildCount(); i++) {
                 (rg3.getChildAt(i)).setEnabled(false);
             }
@@ -141,7 +141,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg4
             for (int i = 0; i < rg4.getChildCount(); i++) {
                 (rg4.getChildAt(i)).setEnabled(false);
             }
@@ -154,7 +154,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg5
             for (int i = 0; i < rg5.getChildCount(); i++) {
                 (rg5.getChildAt(i)).setEnabled(false);
             }
@@ -167,7 +167,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg6
             for (int i = 0; i < rg6.getChildCount(); i++) {
                 (rg6.getChildAt(i)).setEnabled(false);
             }
@@ -180,7 +180,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg7
             for (int i = 0; i < rg7.getChildCount(); i++) {
                 (rg7.getChildAt(i)).setEnabled(false);
             }
@@ -193,7 +193,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg8
             for (int i = 0; i < rg8.getChildCount(); i++) {
                 (rg8.getChildAt(i)).setEnabled(false);
             }
@@ -206,7 +206,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg9
             for (int i = 0; i < rg9.getChildCount(); i++) {
                 (rg9.getChildAt(i)).setEnabled(false);
             }
@@ -219,7 +219,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             } else {
                 incorrect_score++;
             }
-            // Disable RadioButtons of rg1
+            // Disable RadioButtons of rg10
             for (int i = 0; i < rg10.getChildCount(); i++) {
                 (rg10.getChildAt(i)).setEnabled(false);
             }
