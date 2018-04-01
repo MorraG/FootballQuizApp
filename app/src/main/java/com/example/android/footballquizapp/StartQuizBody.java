@@ -239,8 +239,6 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             Toast.makeText(this, R.string.not_chosen1, Toast.LENGTH_SHORT).show();
             return;
         } else {
-            Intent openEmojiQuiz = getIntent();
-            name = openEmojiQuiz.getStringExtra(MainActivity.EXTRA_MESSAGE);
             String resultMessage = createQuizSummary(name, correct_score, incorrect_score, totalNumberOfQuestions);
             Toast.makeText(getApplicationContext(), resultMessage, Toast.LENGTH_LONG).show();
         }
