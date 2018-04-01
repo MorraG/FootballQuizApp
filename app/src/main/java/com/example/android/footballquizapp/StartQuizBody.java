@@ -28,7 +28,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             answer6_3, answer7_2, answer8_4, answer9_1, answer10_3;
 
     //variable to store answer to the question 7
-    final String Q7_ANSWER = "juventus";
+    final String Q7_ANSWER = "Juventus";
 
     // Here we declare RadioGroups
     RadioGroup rg1, rg3, rg4, rg5, rg6, rg8, rg9, rg10;
@@ -271,7 +271,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
     private boolean checkQuestion7() {
         EditText et = (EditText)findViewById(R.id.q_fut_7edit_text);
 
-        return et.getText().toString().equalsIgnoreCase(Q7_ANSWER);
+        return et.getText().toString().equals(Q7_ANSWER);
     }
 
     // This method creates Quiz summary.

@@ -308,40 +308,12 @@
             android:layout_height="wrap_content"
             android:text="@string/q_fut_7" />
 
-        <RadioGroup
-            android:id="@+id/radio_group7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/paddingOrMar_M">
-
-            <RadioButton
-                android:id="@+id/answer7_1"
-                style="@style/radioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/q7_ans_1" />
-
-            <RadioButton
-                android:id="@+id/answer7_2"
-                style="@style/radioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/q7_ans_2" />
-
-            <RadioButton
-                android:id="@+id/answer7_3"
-                style="@style/radioButton"
-                android:layout_width="match_parent"
-                android:text="@string/q7_ans_3" />
-
-            <RadioButton
-                android:id="@+id/answer7_4"
-                style="@style/radioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/q7_ans_4" />
-        </RadioGroup>
+        <EditText
+            android:id="@+id/q_fut_7edit_text"
+            style="@style/editText"
+            android:layout_marginTop="@dimen/paddingOrMar_S"
+            android:fontFamily="@font/advent_pro_light"
+            android:hint=""/>
 
         <View
             android:layout_width="fill_parent"

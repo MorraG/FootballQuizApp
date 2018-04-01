@@ -46,10 +46,7 @@
     <string name="q6_ans_2">Jašin 2030\' minutes</string>
     <string name="q6_ans_3">Geraldo Filho Mazarópi, 1816\' minutes</string>
     <string name="q6_ans_4">Edwin van der Sar, 1311\' minutes</string>
-    <string name="q7_ans_1">Barcellona (8)</string>
-    <string name="q7_ans_2">Juventus (7)</string>
-    <string name="q7_ans_3">Milan (7)</string>
-    <string name="q7_ans_4">Bayern München (5)</string>
+    <string name="q7_ans">Juventus</string>
     <string name="q8_ans_1">Franco Baresi (3)</string>
     <string name="q8_ans_2">Iker Casillas (4)</string>
     <string name="q8_ans_3">Diego Armando Maradona (2)</string>
