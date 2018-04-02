@@ -228,6 +228,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
 
             String resultMessage = createQuizSummary(name, correct_score, incorrect_score, totalNumberOfQuestions);
             Toast.makeText(getApplicationContext(), resultMessage, Toast.LENGTH_LONG).show();
+
         }
     }
 
@@ -289,7 +290,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         return resultMessage;
     }
 
-    // This method is called by clicking on Main screen button. It returns the user to the Main screen.
+    // This method is called by clicking on home screen button. It returns the user to the Main screen.
     public void mainActivity() {
         Intent MainActivity = new Intent(this, MainActivity.class);
         startActivity(MainActivity);
@@ -315,6 +316,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
                 break;
             case R.id.submit_button:
                 submit();
+                submitButton.setEnabled(false);
                 break;
             case R.id.share_button:
                 share();
