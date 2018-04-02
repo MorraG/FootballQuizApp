@@ -271,8 +271,10 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
     }
     public boolean checkQuestion7() {
         EditText et = (EditText)findViewById(R.id.q_fut_7edit_text);
+        et.setFocusable(false);
 
         return et.getText().toString().equals(Q7_ANSWER);
+
     }
 
     private boolean isEmpty() {
@@ -317,6 +319,7 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             case R.id.submit_button:
                 submit();
                 submitButton.setEnabled(false);
+
                 break;
             case R.id.share_button:
                 share();
