@@ -3,6 +3,7 @@ package com.example.android.footballquizapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -220,7 +221,9 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
 
 
             // Check if the questions with CheckBoxes was all marked correctly
-            validateCorrectCheckBoxAnswers(answer2_1, answer2_2, answer2_4);
+            if (!noCheckBoxMarked(answer2_1, answer2_2, answer2_3, answer2_4)){
+                validateCorrectCheckBoxAnswers(answer2_1, answer2_2, answer2_4);
+            }
             disableCheckBoxOptions(answer2_1, answer2_2, answer2_3, answer2_4);
             CheckQuiz7();
 
@@ -261,8 +264,12 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
         }
         return numberOfCheckBoxesNotChecked == checkBoxes.length;
     }
-    // this method to check quiz7 and add correct or incorrect answer
+    // this method to check quiz7, be sure space is filled before the count and add correct or incorrect answer
     private void CheckQuiz7() {
+        EditText et = (EditText) findViewById(R.id.q_fut_7edit_text);
+        if (TextUtils.isEmpty(et.getText().toString())) {
+            return;
+        }
         if( checkQuestion7() ){
             correct_score++;
         } else {
@@ -319,7 +326,6 @@ public class StartQuizBody extends AppCompatActivity implements RadioGroup.OnChe
             case R.id.submit_button:
                 submit();
                 submitButton.setEnabled(false);
-
                 break;
             case R.id.share_button:
                 share();
